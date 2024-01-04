@@ -1,43 +1,29 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import "./UserPage.css"
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const history = useHistory();
+
+  const handleSubmit = () => {
+    history.push('/browse');
+  }
   return (
     <>
     <section>
       <div className="container">
-        <h2>Welcome, {user.username}</h2>
+        <h1 className='welcome-name'>Welcome, {user.username}</h1>
         {/* <p>Your ID is: {user.id}</p> */}
-      </div>
-      <div id="background-wrap">
-        <div class="x1">
-          <div class="cloud"></div>
-        </div>
-        <div class="x2">
-          <div class="cloud"></div>
-        </div>
-        <div class="x3">
-          <div class="cloud"></div>
-        </div>
-        <div class="x4">
-          <div class="cloud"></div>
+        <div className='button-class'>
+          <button id="buttonExplore" onClick={handleSubmit}>
+            Explore
+          </button>
         </div>
       </div>
-    </section>
-
-    <section class="water">
-      <div class="wave wave1"></div>
-      <div class="wave wave2"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave4"></div>
-    </section>
-
-    <section class="info">
-      
     </section>
     </>
   );
