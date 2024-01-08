@@ -5,7 +5,25 @@ import logger from 'redux-logger';
 import rootReducer from './reducers/_root.reducer'; // imports ./redux/reducers/index.js
 import rootSaga from './sagas/_root.saga'; // imports ./redux/sagas/index.js
 
+
 const sagaMiddleware = createSagaMiddleware();
+
+const animals = (state=[], action) => {
+  switch (action.type) {
+    case 'SET_ANIMALS':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+const selectedAnimal = (state=[], action) => {
+  if (action.type === 'SELECT_ANIMAL') {
+    console.log("Selected animal data:", action.payload);
+    return action.payload;
+  }
+  return state;
+}
 
 // this line creates an array of all of redux middleware you want to use
 // we don't want a whole ton of console logs in our production code

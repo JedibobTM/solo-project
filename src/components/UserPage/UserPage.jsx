@@ -10,14 +10,13 @@ function UserPage() {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push('/browse');
+    history.push('/gallery');
   }
   return (
     <>
     <section>
       <div className="container">
         <h1 className='welcome-name'>Welcome, {user.username}</h1>
-        {/* <p>Your ID is: {user.id}</p> */}
         <div className='button-class'>
           <button id="buttonExplore" onClick={handleSubmit}>
             Explore

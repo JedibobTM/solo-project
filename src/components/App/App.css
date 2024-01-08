@@ -16,7 +16,7 @@ body {
 .formPanel {
   position: relative;
   width: 400px;
-  height: 440px;
+  height: 300px;
   background: transparent;
   border: 1px rgba(255, 255, 255, 0.593) solid;
   border-radius: 3px;
@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  animation: fadeInLogin 1s ;
+  animation: fadeInLogin 1s ease-in;
 }
 
 input {
@@ -56,11 +56,23 @@ input {
   justify-content: center;
 }
 
+.btn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  font-size: medium;
+  transition: transform .2s;
+}
+
+.btn:hover {
+  transform: scale(1.3);
+}
+
 @keyframes fadeInLogin {
   0% {
-    transform: scaleY(0);
+    opacity: 0;
   }
   100% {
-    transform: scaleY(10);
+    opacity: 1;
   }
 }

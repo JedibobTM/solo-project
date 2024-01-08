@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import BrowsePage from '../BrowsePage/BrowsePage';
+import Gallery from '../Gallery/Gallery';
 
 import './App.css';
 
@@ -111,9 +111,10 @@ function App() {
               <LandingPage />
             }
           </Route>
-
-          <Route exact path= "/browse">
-            <BrowsePage />
+          <Route
+            exact
+            path="/gallery">
+              <Gallery />
           </Route>
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
