@@ -19,6 +19,10 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Gallery from '../Gallery/Gallery';
+import Animals from '../Animals/Animals';
+import Profile from '../Profile/Profile';
+import Edit from '../Edit/Edit';
 
 import './App.css';
 
@@ -32,6 +36,7 @@ function App() {
   }, [dispatch]);
 
   return (
+    <>
     <Router>
       <div>
         <Nav />
@@ -109,7 +114,29 @@ function App() {
               <LandingPage />
             }
           </Route>
+          <Route
+            exact
+            path="/gallery">
+              <Gallery />
+          </Route>
 
+          <Route
+            exact
+            path="/profile">
+              <Profile />
+            </Route>
+
+          <Route
+            exact
+            path="/api/animals/:id">
+              <Animals />
+            </Route>
+
+          <Route
+            exact
+            path="/edit-animals">
+              <Edit />
+          </Route>
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
@@ -118,6 +145,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </>
   );
 }
 

@@ -1,0 +1,17 @@
+.subtitle {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-name {
+    display: flex;
+    justify-content: center;
+}
+
+.create-post {
+    transform: translateY(1250%);
+}
+
+.create-post:hover {
+    cursor: pointer;
+}

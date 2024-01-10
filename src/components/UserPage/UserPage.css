@@ -1,0 +1,72 @@
+html {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: inherit;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 600px;
+    height: 140px;
+    animation: fadeInAnimation 0.5s ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.welcome-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5vh;
+    padding-top: 3vh;
+}
+
+h1 {
+    font-size: 3vw;
+    text-align: center;
+    color: white;
+}
+
+.button-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#buttonExplore {
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: white;
+    font-size: larger;
+    transition: .3s;
+}
+
+#buttonExplore:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+
+/* Animation */
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
