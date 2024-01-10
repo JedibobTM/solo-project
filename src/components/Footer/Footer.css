@@ -1,11 +1,5 @@
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
-}
-
 footer {
-  margin-top: auto;
-  padding: 20px;
+  position: absolute;
+  bottom: 0;
   text-align: center;
 }

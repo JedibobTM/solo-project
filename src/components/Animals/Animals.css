@@ -1,5 +1,17 @@
 .info-container {
-    height: 80vh;
-    width: 80vw;
+    height: 70vh;
+    width: 90vw;
     border: 1px solid white;
+}
+
+.back-button {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.animal-image{
+    height: 30vh;
+    width: 30vw;
+    padding-left: 1rem;
 }

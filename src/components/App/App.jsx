@@ -20,6 +20,9 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Gallery from '../Gallery/Gallery';
+import Animals from '../Animals/Animals';
+import Profile from '../Profile/Profile';
+import Edit from '../Edit/Edit';
 
 import './App.css';
 
@@ -115,6 +118,24 @@ function App() {
             exact
             path="/gallery">
               <Gallery />
+          </Route>
+
+          <Route
+            exact
+            path="/profile">
+              <Profile />
+            </Route>
+
+          <Route
+            exact
+            path="/api/animals/:id">
+              <Animals />
+            </Route>
+
+          <Route
+            exact
+            path="/edit-animals">
+              <Edit />
           </Route>
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

@@ -13,4 +13,6 @@ CREATE TABLE "animals" (
 
 INSERT INTO "animals" ("animal", "image", "description")
 VALUES 
-('Sawfish', 'sawfish.jpeg', 'There are only around 5,000 adult sawfish left in the world. The main causes for their endangerment is accidental fishing and habitat destruction.')
+('Sawfish', 'images/sawfish.jpeg', 'There are only around 5,000 adult sawfish left in the world. The main causes for their endangerment is accidental fishing and habitat destruction.'),
+('Great White Shark', 'images/shark.jpeg', 'Sharks'),
+('Vaquita', 'images/vaquita.jpg', 'Vaquitas are a type of dolphin found exclusively in the Gulf of California off of Mexico');
