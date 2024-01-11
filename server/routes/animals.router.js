@@ -19,10 +19,28 @@ router.get('/', (req, res) => {
       })
 });
 
-
+// Post to database from create form
 router.post('/', (req, res) => {
   // POST route code here
-  // console.log("req.body is: ", req.body);
+  console.log("req.body is: ", req.body);
+  const animalData = req.body;
+
+  const sqlText = `
+    INSERT INTO "animals" ("animal", "image", "description")
+    VALUES
+    ($1, $2, $3)
+  `
+
+  const sqlValues = [animalData.name, animalData.imgUrl, animalData.description];
+
+  pool.query(sqlText, sqlValues)
+      .then((dbResult) => {
+        console.log("dbresult is: ", dbResult);
+        res.sendStatus(201);
+      }).catch((dbError) => {
+        console.log("Error in POST: ", dbError);
+        res.sendStatus(500);
+      })
 });
 
 module.exports = router;

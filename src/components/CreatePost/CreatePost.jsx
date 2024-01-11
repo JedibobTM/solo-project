@@ -1,6 +1,7 @@
 import './CreatePost.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function CreatePost() {
 
@@ -8,17 +9,19 @@ export default function CreatePost() {
     const [urlInput, setUrlInput] = useState('');
     const [descriptionInput, setDescriptionInput] = useState('');
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Handling CreatePost submit");
-
+        console.log(inputName, urlInput, descriptionInput, "stuff");
         dispatch({
             type: 'SAGA/CREATE_ANIMAL',
             payload: {name: inputName, 
                 imgUrl: urlInput, 
                 description: descriptionInput}
         })
+        history.push('/profile');
     }
     return (
         <>

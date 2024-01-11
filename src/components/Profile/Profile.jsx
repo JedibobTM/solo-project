@@ -1,6 +1,7 @@
 import './Profile.css';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { useEffect } from 'react';
 
 export default function Profile() {
     const user = useSelector((store) => store.user);
@@ -14,7 +15,12 @@ export default function Profile() {
         <>
             <h1 className='profile-name'>{user.username}'s Profile</h1>
             <h2 className='subtitle'>My Posts</h2>
-            <h3 className='create-post' onClick={handleSubmit}>Create Post</h3>
+            <div className='profile-gallery'>
+
+            </div>
+            <div>
+                <h3 className='create-post' onClick={handleSubmit}>Create Post</h3>
+            </div>
         </>
     )
 }
