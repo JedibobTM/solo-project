@@ -20,7 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Gallery from '../Gallery/Gallery';
-import Animals from '../Animals/Animals';
+import Animals from '../Animals/Animals.1';
 import Profile from '../Profile/Profile';
 import Edit from '../Edit/Edit';
 import CreatePost from '../CreatePost/CreatePost';
@@ -154,7 +154,7 @@ function App() {
 
           <Route
             exact
-            path="/edit-animals">
+            path="/edit/:id">
               <Edit />
           </Route>
           {/* If none of the other routes matched, we will show a 404. */}

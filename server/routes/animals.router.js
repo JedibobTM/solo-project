@@ -26,12 +26,12 @@ router.post('/', (req, res) => {
   const animalData = req.body;
 
   const sqlText = `
-    INSERT INTO "animals" ("animal", "image", "description")
+    INSERT INTO "animals" ("animal", "user_id", "image", "description")
     VALUES
-    ($1, $2, $3)
+    ($1, $2, $3, $4);
   `
 
-  const sqlValues = [animalData.name, animalData.imgUrl, animalData.description];
+  const sqlValues = [animalData.name, req.user.id, animalData.imgUrl, animalData.description];
 
   pool.query(sqlText, sqlValues)
       .then((dbResult) => {
