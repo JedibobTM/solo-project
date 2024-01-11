@@ -14,7 +14,7 @@ function UserPage() {
   }
   return (
     <>
-    <section>
+    <section className='userpage-section'>
       <div className="container">
         <h1 className='welcome-name'>Welcome, {user.username}</h1>
         <div className='button-class'>

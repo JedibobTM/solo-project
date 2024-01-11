@@ -9,8 +9,8 @@ export default function Animals() {
     return (
         <>
             <div className='info-container'>
-                <h1>{animal.animal}</h1>
-                <img src={animal.image} className='animal-image' alt={animal.description}/>
+                <h1 className='animal-header'>{animal.animal}</h1>
+                <img src={animal.image} className='animal-image' alt={animal.description} id="pageImg"/>
                 <div className='info'>
                     <p className='animal-description'>{animal.description}</p>
                 </div>

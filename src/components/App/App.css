@@ -31,7 +31,7 @@ body {
 
 input {
   border: none;
-  text-align: center;
+  padding-left: 3px;
   display: flex;
 }
 

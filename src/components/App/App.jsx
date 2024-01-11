@@ -23,6 +23,7 @@ import Gallery from '../Gallery/Gallery';
 import Animals from '../Animals/Animals';
 import Profile from '../Profile/Profile';
 import Edit from '../Edit/Edit';
+import CreatePost from '../CreatePost/CreatePost';
 
 import './App.css';
 
@@ -114,10 +115,29 @@ function App() {
               <LandingPage />
             }
           </Route>
+
+          <Route
+            exact
+            path="/profile">
+              <Profile />
+          </Route>
+
           <Route
             exact
             path="/gallery">
               <Gallery />
+          </Route>
+          
+          <Route
+            exact
+            path="/edit-animals">
+              <Edit />
+          </Route>
+
+          <Route
+            exact
+            path="/create-post">
+              <CreatePost />
           </Route>
 
           <Route

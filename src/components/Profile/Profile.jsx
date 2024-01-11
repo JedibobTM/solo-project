@@ -7,8 +7,8 @@ export default function Profile() {
     const history = useHistory();
 
     const handleSubmit = () => {
-        console.log("Sending to edit page");
-        history.push('/edit-animals')
+        console.log("Sending to create page");
+        history.push('/create-post')
     }
     return (
         <>

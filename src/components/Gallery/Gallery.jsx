@@ -28,7 +28,6 @@ export default function Gallery() {
 
     return (
         <>
-            <h1>Animals</h1>
             <section className='animals'>
                 {animals.map(animal => {
                     return (
