@@ -43,4 +43,46 @@ router.post('/', (req, res) => {
       })
 });
 
+router.delete('/:id', (req, res) => {
+  console.log("req.body is:", req.params.id); // Since we're deleting, use req.params instead of req.body
+  const sqlText = `
+  DELETE FROM "animals" WHERE "id" = $1;
+  `
+
+  const values = [req.params.id];
+  pool.query(sqlText, values)
+      .then((result) => {
+        console.log("dbResult is:", result);
+        res.sendStatus(201);
+      }).catch((err) => {
+        console.log('Error somethin', err);
+        res.sendStatus(500);
+      })
+
+})
+
+router.put('/:id', (req, res) => {
+  console.log("PUT data:", req.body);
+
+  const sqlText = `
+  UPDATE "animals"
+  SET
+    "animal" = $1,
+    "image" = $2,
+    "description" = $3
+  WHERE
+    "id" = $4;
+  `
+
+  const sqlValues = [req.body.animal, req.body.image, req.body.description, req.body.id];
+  
+  pool.query(sqlText, sqlValues)
+      .then((result) => {
+        res.sendStatus(200);
+      }).catch((error) => {
+        console.log('ERROR in PUT request', error);
+        res.sendStatus(error);
+      })
+})
+
 module.exports = router;

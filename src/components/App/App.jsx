@@ -20,7 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Gallery from '../Gallery/Gallery';
-import Animals from '../Animals/Animals.1';
+import Animals from '../Animals/Animals';
 import Profile from '../Profile/Profile';
 import Edit from '../Edit/Edit';
 import CreatePost from '../CreatePost/CreatePost';
@@ -157,7 +157,7 @@ function App() {
             path="/edit/:id">
               <Edit />
           </Route>
-          {/* If none of the other routes matched, we will show a 404. */}
+          {/* If none of the other routes matched, we will show a 404.*/}
           <Route>
             <h1>404</h1>
           </Route>

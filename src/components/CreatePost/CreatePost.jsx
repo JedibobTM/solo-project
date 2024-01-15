@@ -35,7 +35,7 @@ export default function CreatePost() {
                         className='animal-name'
                         name='animal-name'
                     />
-                    <label for="animal-name">Name of Animal</label>
+                    <label htmlFor="animal-name">Name of Animal</label>
                 </div>
                 <div className='input-group'>
                     <input
@@ -45,7 +45,7 @@ export default function CreatePost() {
                         className='img-url'
                         name='image-url'
                     />
-                    <label for="img-url">Image</label>
+                    <label htmlFor="img-url">Image</label>
                 </div>
                 <div className='input-group'>
                     <textarea
@@ -55,7 +55,7 @@ export default function CreatePost() {
                         className='input-description'
                         name='description'
                     ></textarea>
-                    <label for="input-description">Description</label>
+                    <label htmlFor="input-description">Description</label>
                 </div>
                 <button 
                     className='create-button'

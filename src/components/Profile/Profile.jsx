@@ -25,13 +25,12 @@ export default function Profile() {
             <h1 className='profile-name'>{user.username}'s Profile</h1>
             <h2 className='subtitle'>My Posts</h2>
             <div>
-                <h3 className='create-post' onClick={handleSubmit}>Create Post</h3>
             </div>
             <section>
                 {animals.map(animal => {
                     if (animal.user_id === user.id)
                     return (
-                        <div className="profile-container" onClick={() => handleSubmit(animal)} key={animal.id}>
+                <div className="profile-container" key={animal.id}>
                             <div className='profile-card'>
                                 <div className='profile-gallery-box'>
                                     <img src={animal.image} alt={animal.description} />
@@ -44,6 +43,8 @@ export default function Profile() {
                     )
                 })}
             </section>
+            <h3 className='create-post' onClick={handleSubmit}>Create Post</h3>
+            <h3 className='pfp-gallery-btn' onClick={() => history.push('/gallery')}>Back to Gallery</h3>
         </>
     )
 }

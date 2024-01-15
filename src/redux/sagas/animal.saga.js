@@ -28,9 +28,40 @@ import axios from "axios";
     }
   }
 
+  function* deleteAnimal(action) {
+    try {
+      const response = yield axios({
+        method: 'DELETE',
+        url: `/api/animals/${action.payload}`
+      })
+      yield put({
+        type: 'FETCH_ANIMALS'
+      })
+    } catch (error) {
+      console.log("ERROR in Saga delete function", error);
+    }
+  }
+
+  function* editAnimal(action) {
+    try {
+      const response = yield axios({
+        method: 'PUT',
+        url: `/api/animals/${action.payload.id}`,
+        data: action.payload
+      })
+      yield put ({
+        type: 'FETCH_ANIMALS'
+      })
+    } catch (error) {
+      console.log("PUT request error", error);
+    }
+  }
+
   function* animalSaga() {
     yield takeLatest('FETCH_ANIMALS', fetchAllAnimals);
     yield takeLatest('SAGA/CREATE_ANIMAL', createAnimal);
+    yield takeLatest('SAGA/REMOVE_PAGE', deleteAnimal);
+    yield takeLatest('SUBMIT_FORM_EDIT', editAnimal);
   }
 
 export default animalSaga;
